@@ -1,0 +1,66 @@
+---
+const links = [
+  { href: '/#experience', id: 'experience', label: 'experience' },
+  { href: '/#writing', id: 'writing', label: 'writing' },
+  { href: '/#talks', id: 'talks', label: 'talks' },
+  { href: '/#contact', id: 'contact', label: 'contact' },
+] as const;
+---
+
+<nav
+  class="sticky top-0 z-50 flex justify-between items-center px-12 py-5 border-b border-border bg-paper"
+>
+  <a
+    href="/"
+    class="font-mono text-base font-medium text-ink tracking-tight hover:text-green transition-colors"
+  >
+    Khalvai/
+  </a>
+  <div class="flex gap-8">
+    {
+      links.map(({ href, id, label }) => (
+        <a
+          href={href}
+          data-section={id}
+          class="nav-link text-[13px] no-underline tracking-wide text-ink-muted hover:text-ink transition-colors"
+        >
+          {label}
+        </a>
+      ))
+    }
+  </div>
+</nav>
+
+<script>
+  const sectionIds = ['experience', 'writing', 'talks', 'contact'];
+
+  const setActive = (id: string) => {
+    document.querySelectorAll<HTMLAnchorElement>('[data-section]').forEach((link) => {
+      const active = link.dataset.section === id;
+      link.classList.toggle('text-ink', active);
+      link.classList.toggle('text-ink-muted', !active);
+    });
+  };
+
+  const hash = window.location.hash.slice(1);
+  if (sectionIds.includes(hash)) {
+    setActive(hash);
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      const visible = entries
+        .filter((e) => e.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+      if (visible[0]) {
+        setActive(visible[0].target.id);
+      }
+    },
+    { rootMargin: '-20% 0px -60% 0px', threshold: [0, 0.25, 0.5] }
+  );
+
+  sectionIds.forEach((id) => {
+    const el = document.getElementById(id);
+    if (el) observer.observe(el);
+  });
+</script>
