@@ -1,13 +1,20 @@
 <div>
-  <p class="text-[11px] text-ink-faint tracking-widest mb-4 font-mono uppercase">
+  <p
+    class="text-[11px] text-ink-faint tracking-widest mb-4 font-mono uppercase"
+  >
     // how I think about systems
   </p>
 
-  <svg width="100%" viewBox="0 0 360 280" role="img" aria-labelledby="arch-title arch-desc">
+  <svg
+    width="100%"
+    viewBox="0 0 360 280"
+    role="img"
+    aria-labelledby="arch-title arch-desc"
+  >
     <title id="arch-title">Layered system architecture diagram</title>
     <desc id="arch-desc">
-      Concentric rectangles showing infrastructure wrapping application wrapping domain, with ports
-      connecting the domain to the outside world.
+      Concentric rectangles showing infrastructure wrapping application wrapping
+      domain, with ports connecting the domain to the outside world.
     </desc>
 
     <!-- Infrastructure (outermost) -->
@@ -90,7 +97,14 @@
     >
       business logic · rules
     </text>
-    <text x="180" y="162" text-anchor="middle" font-size="9" fill="#6b9b68" font-family="monospace">
+    <text
+      x="180"
+      y="162"
+      text-anchor="middle"
+      font-size="9"
+      fill="#6b9b68"
+      font-family="monospace"
+    >
       the core stays pure
     </text>
 
@@ -103,8 +117,13 @@
       stroke="#9b9b94"
       stroke-width="0.8"
       marker-end="url(#arrow)"></line>
-    <text x="38" y="137" text-anchor="middle" font-size="9" fill="#9b9b94" font-family="monospace"
-      >port</text
+    <text
+      x="38"
+      y="137"
+      text-anchor="middle"
+      font-size="9"
+      fill="#9b9b94"
+      font-family="monospace">port</text
     >
 
     <!-- Port arrow — right (domain driving out to adapters) -->
@@ -116,8 +135,13 @@
       stroke="#9b9b94"
       stroke-width="0.8"
       marker-end="url(#arrow)"></line>
-    <text x="322" y="137" text-anchor="middle" font-size="9" fill="#9b9b94" font-family="monospace"
-      >port</text
+    <text
+      x="322"
+      y="137"
+      text-anchor="middle"
+      font-size="9"
+      fill="#9b9b94"
+      font-family="monospace">port</text
     >
 
     <defs>

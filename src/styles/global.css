@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 html {
   color-scheme: light only;
@@ -11,7 +11,6 @@ html {
 section[id] {
   scroll-margin-top: 4.5rem;
 }
-
 
 @theme {
   /* Base palette — pulled directly from the concept HTML */
@@ -30,6 +29,6 @@ section[id] {
   --color-border-light: #c8c8c2;
 
   /* Typography — loaded via system stack; swap these for web fonts if desired */
-  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
-  --font-mono: "GeistMono", "JetBrains Mono", ui-monospace, monospace;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'GeistMono', 'JetBrains Mono', ui-monospace, monospace;
 }

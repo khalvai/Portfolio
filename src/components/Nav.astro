@@ -35,11 +35,13 @@ const links = [
   const sectionIds = ['experience', 'writing', 'talks', 'contact'];
 
   const setActive = (id: string) => {
-    document.querySelectorAll<HTMLAnchorElement>('[data-section]').forEach((link) => {
-      const active = link.dataset.section === id;
-      link.classList.toggle('text-ink', active);
-      link.classList.toggle('text-ink-muted', !active);
-    });
+    document
+      .querySelectorAll<HTMLAnchorElement>('[data-section]')
+      .forEach((link) => {
+        const active = link.dataset.section === id;
+        link.classList.toggle('text-ink', active);
+        link.classList.toggle('text-ink-muted', !active);
+      });
   };
 
   const hash = window.location.hash.slice(1);

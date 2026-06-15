@@ -7,7 +7,9 @@ import StackTag from '@/components/ui/StackTag.astro';
 import { getCollection } from 'astro:content';
 
 const allProjects = await getCollection('projects');
-const projects = allProjects.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const projects = allProjects.sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
 
 const allPosts = await getCollection('posts');
 const posts = allPosts
@@ -15,17 +17,33 @@ const posts = allPosts
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
 const formatDate = (date: Date) =>
-  date.toLocaleDateString('en-GB', { year: 'numeric', month: 'short', day: 'numeric' });
+  date.toLocaleDateString('en-GB', {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+  });
 
 const contactLinks = [
-  { label: 'Email', href: 'mailto:khalvayozbek@gmail.com', display: 'khalvayozbek@gmail.com' },
-  { label: 'GitHub', href: 'https://github.com/khalvai', display: 'github.com/khalvai' },
+  {
+    label: 'Email',
+    href: 'mailto:khalvayozbek@gmail.com',
+    display: 'khalvayozbek@gmail.com',
+  },
+  {
+    label: 'GitHub',
+    href: 'https://github.com/khalvai',
+    display: 'github.com/khalvai',
+  },
   {
     label: 'LinkedIn',
     href: 'https://linkedin.com/in/khalvai-ozbek',
     display: 'linkedin.com/in/khalvai-ozbek',
   },
-  { label: 'Telegram', href: 'https://t.me/khalvai', display: 't.me/khalvai' },
+  {
+    label: 'Telegram',
+    href: 'https://t.me/khalvai',
+    display: 't.me/khalvai',
+  },
 ];
 ---
 
@@ -37,7 +55,11 @@ const contactLinks = [
 
   <section id="experience" class="border-t border-border px-12 py-20">
     <div class="max-w-3xl mx-auto mb-14">
-      <p class="text-[11px] font-mono text-ink-faint tracking-widest uppercase mb-2">Experience</p>
+      <p
+        class="text-[11px] font-mono text-ink-faint tracking-widest uppercase mb-2"
+      >
+        Experience
+      </p>
       <h2 class="text-2xl font-normal text-ink">Where I've worked</h2>
       <p class="text-ink-muted mt-3 text-[15px]">
         Where I've worked, what I built, and how I grew.
@@ -49,10 +71,15 @@ const contactLinks = [
   <section id="writing" class="border-t border-border px-12 py-20">
     <div class="max-w-3xl mx-auto">
       <div class="mb-14">
-        <p class="text-[11px] font-mono text-ink-faint tracking-widest uppercase mb-2">Writing</p>
+        <p
+          class="text-[11px] font-mono text-ink-faint tracking-widest uppercase mb-2"
+        >
+          Writing
+        </p>
         <h2 class="text-2xl font-normal text-ink">Latest posts</h2>
         <p class="text-ink-muted mt-3 text-[15px]">
-          Notes on software architecture, TypeScript patterns, and lessons from the field.
+          Notes on software architecture, TypeScript patterns, and lessons from
+          the field.
         </p>
       </div>
 
@@ -89,10 +116,15 @@ const contactLinks = [
 
   <section id="talks" class="border-t border-border px-12 py-20">
     <div class="max-w-3xl mx-auto mb-14">
-      <p class="text-[11px] font-mono text-ink-faint tracking-widest uppercase mb-2">Talks</p>
+      <p
+        class="text-[11px] font-mono text-ink-faint tracking-widest uppercase mb-2"
+      >
+        Talks
+      </p>
       <h2 class="text-2xl font-normal text-ink">On stage</h2>
       <p class="text-ink-muted mt-3 text-[15px]">
-        Conference talks and university workshops on architecture, patterns, and developer craft.
+        Conference talks and university workshops on architecture, patterns, and
+        developer craft.
       </p>
     </div>
     <TalksSection />
@@ -100,7 +132,11 @@ const contactLinks = [
 
   <section id="contact" class="border-t border-border px-12 py-20">
     <div class="max-w-2xl mx-auto">
-      <p class="text-[11px] font-mono text-ink-faint tracking-widest uppercase mb-2">Contact</p>
+      <p
+        class="text-[11px] font-mono text-ink-faint tracking-widest uppercase mb-2"
+      >
+        Contact
+      </p>
       <h2 class="text-2xl font-normal text-ink mb-3">Get in touch</h2>
       <p class="text-ink-muted mb-12 text-[15px] leading-relaxed">
         You also care about patterns and architecture?<br />
@@ -111,11 +147,15 @@ const contactLinks = [
         {
           contactLinks.map(({ label, href, display }) => (
             <li class="flex items-center gap-6">
-              <span class="text-[11px] font-mono text-ink-faint w-16 flex-shrink-0">{label}</span>
+              <span class="text-[11px] font-mono text-ink-faint w-16 flex-shrink-0">
+                {label}
+              </span>
               <a
                 href={href}
                 target={href.startsWith('mailto') ? undefined : '_blank'}
-                rel={href.startsWith('mailto') ? undefined : 'noopener noreferrer'}
+                rel={
+                  href.startsWith('mailto') ? undefined : 'noopener noreferrer'
+                }
                 class="text-[14px] text-ink hover:text-green transition-colors"
               >
                 {display}

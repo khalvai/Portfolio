@@ -25,7 +25,8 @@ const experiences = [
     location: 'Qazvin, Iran',
     period: 'Jan 2023 – Jan 2024',
     duration: '1 year 1 month',
-    about: 'Appointment management platform offering tailored scheduling solutions for businesses.',
+    about:
+      'Appointment management platform offering tailored scheduling solutions for businesses.',
     highlights: [
       'Designed event-driven microservices with CQRS patterns, handling async workflows and decoupled service communication reliably.',
       'Built scalable REST APIs using Hexagonal Architecture, ensuring clean service boundaries and long-term maintainability.',
@@ -59,16 +60,27 @@ const experiences = [
           <div class="absolute -left-[4.5px] top-[7px] w-2 h-2 rounded-full bg-green ring-2 ring-paper" />
 
           <p class="text-[11px] font-mono text-ink-faint mb-1 tracking-wide">
-            {exp.period} &nbsp;·&nbsp; {exp.duration} &nbsp;·&nbsp; {exp.location}
+            {exp.period} &nbsp;·&nbsp; {exp.duration} &nbsp;·&nbsp;{' '}
+            {exp.location}
           </p>
-          <h3 class="text-base font-medium text-ink leading-snug">{exp.role}</h3>
-          <p class="text-[13px] text-green mb-3"><a href={exp.link} target="_blank" rel="noopener noreferrer">{exp.company}</a></p>
-          <p class="text-[13px] text-ink-muted mb-4 leading-relaxed italic">{exp.about}</p>
+          <h3 class="text-base font-medium text-ink leading-snug">
+            {exp.role}
+          </h3>
+          <p class="text-[13px] text-green mb-3">
+            <a href={exp.link} target="_blank" rel="noopener noreferrer">
+              {exp.company}
+            </a>
+          </p>
+          <p class="text-[13px] text-ink-muted mb-4 leading-relaxed italic">
+            {exp.about}
+          </p>
 
           <ul class="space-y-2 mb-5">
             {exp.highlights.map((point) => (
               <li class="flex gap-3 text-[13px] text-ink-muted leading-relaxed">
-                <span class="text-green mt-px select-none flex-shrink-0">—</span>
+                <span class="text-green mt-px select-none flex-shrink-0">
+                  —
+                </span>
                 <span>{point}</span>
               </li>
             ))}

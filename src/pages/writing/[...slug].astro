@@ -20,13 +20,19 @@ const { entry } = Astro.props;
 const { Content } = await render(entry);
 
 const formatDate = (date: Date) =>
-  date.toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' });
+  date.toLocaleDateString('en-GB', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
 ---
 
 <BaseLayout title={entry.data.title} description={entry.data.description}>
   <article class="max-w-2xl mx-auto px-12 py-16">
-
-    <a href="/#writing" class="text-[13px] text-ink-muted hover:text-ink transition-colors mb-8 inline-block">
+    <a
+      href="/#writing"
+      class="text-[13px] text-ink-muted hover:text-ink transition-colors mb-8 inline-block"
+    >
       ← all writings
     </a>
 
@@ -34,20 +40,27 @@ const formatDate = (date: Date) =>
       {formatDate(entry.data.date)}
     </time>
 
-    <h1 class="text-3xl font-normal text-ink mb-3">{entry.data.title}</h1>
-    <p class="text-[15px] text-ink-muted leading-relaxed mb-8">{entry.data.description}</p>
+    <h1 class="text-3xl font-normal text-ink mb-3">
+      {entry.data.title}
+    </h1>
+    <p class="text-[15px] text-ink-muted leading-relaxed mb-8">
+      {entry.data.description}
+    </p>
 
-    {entry.data.tags.length > 0 && (
-      <div class="flex gap-2 flex-wrap mb-10">
-        {entry.data.tags.map((tag) => (
-          <span class="text-[10px] font-mono text-ink-faint bg-surface px-2 py-0.5 rounded">
-            #{tag}
-          </span>
-        ))}
-      </div>
-    )}
+    {
+      entry.data.tags.length > 0 && (
+        <div class="flex gap-2 flex-wrap mb-10">
+          {entry.data.tags.map((tag) => (
+            <span class="text-[10px] font-mono text-ink-faint bg-surface px-2 py-0.5 rounded">
+              #{tag}
+            </span>
+          ))}
+        </div>
+      )
+    }
 
-    <div class="prose-content text-[15px] text-ink leading-relaxed space-y-4
+    <div
+      class="prose-content text-[15px] text-ink leading-relaxed space-y-4
                 [&_h2]:text-xl [&_h2]:font-medium [&_h2]:text-ink [&_h2]:mt-8 [&_h2]:mb-3
                 [&_h3]:text-base [&_h3]:font-medium [&_h3]:text-ink [&_h3]:mt-6 [&_h3]:mb-2
                 [&_p]:text-ink-muted [&_p]:leading-relaxed
@@ -56,9 +69,9 @@ const formatDate = (date: Date) =>
                 [&_strong]:text-ink [&_strong]:font-medium
                 [&_code]:font-mono [&_code]:text-[13px] [&_code]:bg-surface [&_code]:px-1.5 [&_code]:py-0.5 [&_code]:rounded
                 [&_pre]:bg-surface [&_pre]:p-4 [&_pre]:rounded-lg [&_pre]:overflow-x-auto
-                [&_pre_code]:bg-transparent [&_pre_code]:p-0">
+                [&_pre_code]:bg-transparent [&_pre_code]:p-0"
+    >
       <Content />
     </div>
-
   </article>
 </BaseLayout>

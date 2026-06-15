@@ -24,7 +24,10 @@ const projects = defineCollection({
     available as typed entries. The `id` of each entry is the filename
     without the extension (e.g. "hexagonal-arch").
   */
-  loader: glob({ pattern: '**/*.md', base: './src/content/projects' }),
+  loader: glob({
+    pattern: '**/*.md',
+    base: './src/content/projects',
+  }),
   schema: z.object({
     title: z.string(),
     description: z.string(),
