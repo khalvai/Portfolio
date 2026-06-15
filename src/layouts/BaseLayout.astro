@@ -1,0 +1,37 @@
+---
+import Nav from '@/components/Nav.astro';
+import '@/styles/global.css';
+
+interface Props {
+  /** The page-specific part of the <title> tag */
+  title: string;
+  /** Used for the meta description tag — important for SEO */
+  description?: string;
+}
+
+const {
+  title,
+  description = 'Khalvai Ozbek — Backend Engineer building scalable TypeScript and Node.js systems.',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="color-scheme" content="light" />
+    <meta name="theme-color" content="#f8f8f6" />
+    <title>{title} — Khalvai Ozbek</title>
+  </head>
+  <body class="bg-paper text-ink font-sans antialiased">
+    <Nav />
+    <div style="max-width: 1440px; margin: 0 auto;">
+      <main class="mx-auto">
+        <slot />
+      </main>
+    </div>
+  </body>
+</html>

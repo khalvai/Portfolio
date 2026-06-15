@@ -1,0 +1,45 @@
+---
+export interface Talk {
+  topic: string;
+  venue: string;
+  date: string;
+  description: string;
+  poster: string;
+  link: string | null;
+  linkLabel: string;
+}
+export const talks = [
+  {
+    topic: 'Software Architecture and Hidden Costs',
+    venue: 'FullstacksJS YouTube Channel',
+    date: '2024-12-28',
+    description: 'Trade-offs and how to avoid long-term architectural costs.',
+    poster: '/talks/SoftwareArchitectureCost.jpg',
+    link: 'https://youtu.be/dvyBWnzyoqQ?si=Efx9AlIeBikUMiZW',
+    linkLabel: 'watch seminar →',
+  },
+  {
+    topic: 'Software Architecture',
+    venue: 'Vali-e-Asr University',
+    date: '2024-05-20',
+    description: 'The importance and history of software architecture — from monoliths to modern distributed systems.',
+    poster: '/talks/software_architectures.jpg',
+    link: null,
+  },
+  {
+    topic: 'Design Patterns',
+    venue: 'Vali-e-Asr University',
+    date: '2024-04-22',
+    description: 'The importance of patterns with live demonstrations of real-world applications.',
+    poster: '/talks/design_patterns.jpg',
+    link: null,
+  },
+  {
+    topic: 'Clean Code Principles',
+    venue: 'Vali-e-Asr University',
+    date: '2023-02-09',
+    description: 'Clean code principles explained with annotated code samples and live refactoring.',
+    poster: '/talks/clean_code_2023.jpg',
+    link: null,
+  },
+];
