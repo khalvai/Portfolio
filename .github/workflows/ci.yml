@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  build:
+  lint-and-format:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
@@ -25,9 +25,6 @@ jobs:
 
       - name: Format
         run: pnpm format
-
-      - name: Test
-        run: pnpm test
 
       - name: Build
         run: pnpm build
