@@ -5,14 +5,9 @@ import '@/styles/global.css';
 interface Props {
   /** The page-specific part of the <title> tag */
   title: string;
-  /** Used for the meta description tag — important for SEO */
-  description?: string;
 }
 
-const {
-  title,
-  description = 'Khalvai Ozbek — Backend Engineer building scalable TypeScript and Node.js systems.',
-} = Astro.props;
+const { title } = Astro.props;
 ---
 
 <!doctype html>
