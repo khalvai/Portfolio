@@ -1,0 +1,19 @@
+---
+/*
+  StackTag renders a single technology badge.
+  Atomic component: receives a label, renders nothing else.
+  Used in Hero and on the /work listing page.
+*/
+
+interface Props {
+  label: string;
+}
+
+const { label } = Astro.props;
+---
+
+<span
+  class="text-[11px] font-mono text-ink-muted bg-surface px-2.5 py-1 rounded"
+>
+  {label}
+</span>

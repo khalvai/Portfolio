@@ -1,0 +1,114 @@
+---
+import StackTag from '@/components/ui/StackTag.astro';
+import ArchDiagram from '@/components/ArchDiagram.astro';
+
+const stack = [
+  'TypeScript',
+  'NestJS',
+  'Node.js',
+  'PostgreSQL',
+  'DDD',
+  'Hexagonal Arch.',
+  'Docker',
+];
+
+const beliefs = [
+  'Simplicity over cleverness',
+  'Passionate for learning about software',
+  'Build for the people who maintain it next',
+];
+---
+
+<div class="grid grid-cols-1 md:grid-cols-2 md:min-h-[calc(100vh-61px)]">
+  <div
+    class="flex flex-col justify-start md:justify-center px-12 pt-2 pb-16 md:py-16 border-b md:border-b-0 md:border-r border-border"
+  >
+    <!-- Avatar — standalone above the name so the portrait has room to breathe -->
+    <div class="mb-5 w-32 bg-paper">
+      <img
+        src="/me.png"
+        alt="Khalvai Ozbek"
+        class="w-32 h-32 object-contain object-top"
+      />
+    </div>
+
+    <!-- Name + "open to work" badge + location -->
+    <div class="mb-6">
+      <div class="flex items-center gap-2 text-sm font-medium text-ink mb-1">
+        Khalvai Ozbek
+
+        <button
+          type="button"
+          aria-label="Hear pronunciation"
+          class="ml-1.5 flex items-center p-1 group rounded hover:bg-green-tint transition"
+          onclick="document.getElementById('pronunciation-audio').play()"
+        >
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            class="text-green group-hover:text-green-dark"
+          >
+            <path
+              d="M11 5L6 9H3v6h3l5 4V5z"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path>
+            <path
+              d="M15.54 8.46a5 5 0 010 7.07m2.83-9.9a9 9 0 010 12.73"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path></svg
+          >
+        </button>
+        <audio id="pronunciation-audio" src="/sound.mp3"></audio>
+        <span
+          class="inline-flex items-center gap-1.5 text-[11px] text-green bg-green-tint px-2 py-0.5 rounded-full"
+        >
+          <span class="relative flex w-1.5 h-1.5">
+            <span
+              class="absolute inline-flex h-full w-full rounded-full bg-green opacity-60 animate-ping"
+            ></span>
+            <span class="relative inline-flex w-1.5 h-1.5 rounded-full bg-green"
+            ></span>
+          </span>
+          open to work
+        </span>
+      </div>
+      <div class="text-xs text-ink-muted">
+        Kaiserslautern, Rheinland-Pfalz, Germany
+      </div>
+    </div>
+
+    <!-- Sub-headline -->
+    <p class="text-[15px] text-ink-muted leading-relaxed mt-5 mb-9 max-w-sm">
+      I prioritize doing things right over doing things fast and love building
+      systems for long-term usage,<br />
+      making them understandable for future engineers.
+    </p>
+
+    <!-- Tech stack tags -->
+    <div class="flex gap-2 flex-wrap mt-10">
+      {stack.map((tech) => <StackTag label={tech} />)}
+    </div>
+  </div>
+
+  <!-- RIGHT: Architecture diagram + beliefs -->
+  <div class="flex flex-col justify-center px-12 py-16">
+    <ArchDiagram />
+
+    <div class="mt-10 pt-6 border-t border-border space-y-2.5">
+      {
+        beliefs.map((belief) => (
+          <div class="flex items-center gap-2.5">
+            <div class="w-1 h-1 rounded-full bg-green flex-shrink-0" />
+            <span class="text-[13px] text-ink-muted">{belief}</span>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</div>

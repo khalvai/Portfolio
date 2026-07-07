@@ -1,0 +1,133 @@
+---
+const experiences = [
+  {
+    role: 'Senior Software Engineer',
+    company: 'Intelika.ai',
+    link: 'https://intelika.ai',
+    period: 'Apr 2025 – Mar 2026',
+    duration: '1 year',
+    about:
+      'AI services company building LLM-powered conversational experiences for enterprise customers.',
+    highlights: [
+      'Migrated from a Microservice to a modular monolithic architecture, reducing development time and complexity.',
+      'Interviewed and onboarded 4 Software Engineers into the team.',
+      'Documented the adopted principles and recorded videos explaining the concepts adapted by the team.',
+      'Mentored 2 interns, supporting their growth and successful integration into the development team.',
+    ],
+    stack: [
+      'NestJS',
+      'TypeScript',
+      'Modular Monolith',
+      'DDD',
+      'Team Leadership',
+    ],
+  },
+  {
+    role: 'Software Engineer',
+    company: 'Intelika.ai',
+    link: 'https://intelika.ai',
+    period: 'Mar 2024 – Apr 2025',
+    duration: '1 year 2 months',
+    about:
+      'AI services company building LLM-powered conversational experiences for enterprise customers.',
+    highlights: [
+      'Built an internal NestJS seedwork adopted across multiple microservices, standardising architecture and reducing onboarding effort.',
+      'Decoupled HTTP and gRPC communication protocols from business logic, making domain code more understandable and independently testable.',
+      'Discovered business bounded contexts and integrated domain model concepts into the existing N-Layered Architecture.',
+    ],
+    stack: ['NestJS', 'TypeScript', 'DDD', 'gRPC', 'Microservices'],
+  },
+  {
+    role: 'Software Engineer – Digital Menu',
+    company: 'Digital Menu',
+    link: 'https://infinite.onl/',
+    period: 'Apr 2023 – Feb 2024',
+    duration: '11 months',
+    about:
+      'Digital Menu is a platform for creating and managing digital menus for restaurants and cafes.',
+    highlights: [
+      'Implemented the inbox/outbox pattern, ensuring eventual consistency and idempotency of events.',
+      'Dockerized the project with separate test, development, and production stages, improving development experience.',
+      'Removed unnecessary abstractions tied to implementation details, making the codebase simpler and more maintainable.',
+    ],
+    stack: ['NestJS', 'TypeScript', 'Inbox/Outbox', 'Docker', 'Event-Driven'],
+  },
+  {
+    role: 'Backend Engineer',
+    company: 'Nobati.app',
+    link: 'https://nobati.app',
+    period: 'May 2022 – Apr 2023',
+    duration: '1 year',
+    about:
+      'Appointment management platform offering tailored scheduling solutions for businesses, serving over 200,000 users.',
+    highlights: [
+      'Migrated JavaScript codebase into TypeScript, using DDD, separating concepts in smaller chunks.',
+      'Planned parallel development of old repositories and integration with new services.',
+      'Contributed to the success of a company serving over 200,000 users by prioritizing solving existing challenges.',
+      'Solved payment problems and issuing subscriptions for the users, making a flow of purchase',
+      'Solved concurrency issue of reserving a slot of time for a user, using two level locks in the business process.',
+    ],
+    stack: ['NestJS', 'TypeScript', 'Hexagonal Arch.', 'CQRS', 'DDD'],
+  },
+  {
+    role: 'Backend Developer',
+    company: 'Asrez Group',
+    link: 'https://github.com/Asrez',
+    period: 'Oct 2021 – Mar 2022',
+    duration: '6 months',
+    about:
+      'Web technology consultancy delivering creative software infrastructure solutions to clients.',
+    highlights: [
+      'Developed APIs using REST and GraphQL to support diverse client applications.',
+      'Implemented an N-layered architecture in NestJS, ensuring scalability, testability, and clear separation of concerns.',
+    ],
+    stack: ['NestJS', 'TypeScript', 'REST', 'GraphQL'],
+  },
+];
+---
+
+<div class="max-w-3xl mx-auto">
+  <ul class="border-l border-border space-y-14">
+    {
+      experiences.map((exp) => (
+        <li class="relative pl-8">
+          <div class="absolute -left-[4.5px] top-[7px] w-2 h-2 rounded-full bg-green ring-2 ring-paper" />
+
+          <p class="text-[11px] font-mono text-ink-faint mb-1 tracking-wide">
+            {exp.period} &nbsp;·&nbsp; {exp.duration}
+          </p>
+          <h3 class="text-base font-medium text-ink leading-snug">
+            {exp.role}
+          </h3>
+          <p class="text-[13px] text-green mb-3">
+            <a href={exp.link} target="_blank" rel="noopener noreferrer">
+              {exp.company}
+            </a>
+          </p>
+          <p class="text-[13px] text-ink-muted mb-4 leading-relaxed italic">
+            {exp.about}
+          </p>
+
+          <ul class="space-y-2 mb-5">
+            {exp.highlights.map((point) => (
+              <li class="flex gap-3 text-[13px] text-ink-muted leading-relaxed">
+                <span class="text-green mt-px select-none flex-shrink-0">
+                  —
+                </span>
+                <span>{point}</span>
+              </li>
+            ))}
+          </ul>
+
+          <div class="flex gap-2 flex-wrap">
+            {exp.stack.map((tech) => (
+              <span class="text-[11px] font-mono text-ink-faint bg-surface px-2.5 py-1 rounded">
+                {tech}
+              </span>
+            ))}
+          </div>
+        </li>
+      ))
+    }
+  </ul>
+</div>

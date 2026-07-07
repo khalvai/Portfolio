@@ -1,0 +1,160 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Hero from '@/components/Hero.astro';
+import ExperienceSection from '@/components/sections/ExperienceSection.astro';
+import TalksSection from '@/components/sections/TalksSection.astro';
+import { getCollection } from 'astro:content';
+
+const allPosts = await getCollection('posts');
+const posts = allPosts
+  .filter((p) => !p.data.draft)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const formatDate = (date: Date) =>
+  date.toLocaleDateString('en-GB', {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+  });
+
+const contactLinks = [
+  {
+    label: 'Email',
+    href: 'mailto:khalvayozbek@gmail.com',
+    display: 'khalvayozbek@gmail.com',
+  },
+  {
+    label: 'GitHub',
+    href: 'https://github.com/khalvai',
+    display: 'github.com/khalvai',
+  },
+  {
+    label: 'LinkedIn',
+    href: 'https://linkedin.com/in/khalvai-ozbek',
+    display: 'linkedin.com/in/khalvai-ozbek',
+  },
+  {
+    label: 'Telegram',
+    href: 'https://t.me/khalvai',
+    display: 't.me/khalvai',
+  },
+];
+---
+
+<BaseLayout title="Khalvai Ozbek">
+  <Hero />
+
+  <section id="experience" class="border-t border-border px-12 py-20">
+    <div class="max-w-3xl mx-auto mb-14">
+      <p
+        class="text-[11px] font-mono text-ink-faint tracking-widest uppercase mb-2"
+      >
+        Experience
+      </p>
+      <h2 class="text-2xl font-normal text-ink">Where I've worked</h2>
+      <p class="text-ink-muted mt-3 text-[15px]">
+        Where I've worked, what I built, and how I grew.
+      </p>
+    </div>
+    <ExperienceSection />
+  </section>
+
+  <section id="writing" class="border-t border-border px-12 py-20">
+    <div class="max-w-3xl mx-auto">
+      <div class="mb-14">
+        <p
+          class="text-[11px] font-mono text-ink-faint tracking-widest uppercase mb-2"
+        >
+          Writing
+        </p>
+        <h2 class="text-2xl font-normal text-ink">Latest posts</h2>
+        <p class="text-ink-muted mt-3 text-[15px]">
+          Notes on software architecture, TypeScript patterns, and lessons from
+          the field.
+        </p>
+      </div>
+
+      <ul class="space-y-8">
+        {
+          posts.map((post) => (
+            <li class="border-b border-border pb-8 last:border-0">
+              <a href={`/writing/${post.id}`} class="group block">
+                <time class="text-[11px] font-mono text-ink-faint mb-2 block">
+                  {formatDate(post.data.date)}
+                </time>
+                <h3 class="text-base font-medium text-ink group-hover:text-green transition-colors mb-1">
+                  {post.data.title}
+                </h3>
+                <p class="text-[13px] text-ink-muted leading-relaxed mb-3">
+                  {post.data.description}
+                </p>
+                {post.data.tags.length > 0 && (
+                  <div class="flex gap-2 flex-wrap">
+                    {post.data.tags.map((tag) => (
+                      <span class="text-[10px] font-mono text-ink-faint bg-surface px-2 py-0.5 rounded">
+                        #{tag}
+                      </span>
+                    ))}
+                  </div>
+                )}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <section id="talks" class="border-t border-border px-12 py-20">
+    <div class="max-w-3xl mx-auto mb-14">
+      <p
+        class="text-[11px] font-mono text-ink-faint tracking-widest uppercase mb-2"
+      >
+        Talks
+      </p>
+      <h2 class="text-2xl font-normal text-ink">On stage</h2>
+      <p class="text-ink-muted mt-3 text-[15px]">
+        Conference talks and university workshops on architecture, patterns, and
+        developer craft.
+      </p>
+    </div>
+    <TalksSection />
+  </section>
+
+  <section id="contact" class="border-t border-border px-12 py-20">
+    <div class="max-w-3xl mx-auto">
+      <p
+        class="text-[11px] font-mono text-ink-faint tracking-widest uppercase mb-2"
+      >
+        Contact
+      </p>
+      <h2 class="text-2xl font-normal text-ink mb-3">Get in touch</h2>
+      <p class="text-ink-muted mb-12 text-[15px] leading-relaxed">
+        You also care about patterns and architecture?<br />
+        I'm open to discuss, feel free to contact me.
+      </p>
+
+      <ul class="space-y-4">
+        {
+          contactLinks.map(({ label, href, display }) => (
+            <li class="flex items-center gap-6">
+              <span class="text-[11px] font-mono text-ink-faint w-16 flex-shrink-0">
+                {label}
+              </span>
+              <a
+                href={href}
+                target={href.startsWith('mailto') ? undefined : '_blank'}
+                rel={
+                  href.startsWith('mailto') ? undefined : 'noopener noreferrer'
+                }
+                class="text-[14px] text-ink hover:text-green transition-colors"
+              >
+                {display}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+</BaseLayout>
