@@ -4,7 +4,6 @@ import Hero from '@/components/Hero.astro';
 import ExperienceSection from '@/components/sections/ExperienceSection.astro';
 import TalksSection from '@/components/sections/TalksSection.astro';
 import { getCollection } from 'astro:content';
-export const prerender = true;
 
 const allPosts = await getCollection('posts');
 const posts = allPosts
