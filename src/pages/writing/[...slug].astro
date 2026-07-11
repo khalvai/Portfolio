@@ -3,6 +3,7 @@
   /writing/:slug — individual blog post.
   Same static pre-rendering pattern as /work/[...slug].astro.
 */
+export const prerender = true;
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import { getCollection, render } from 'astro:content';
 
