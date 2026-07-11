@@ -4,7 +4,7 @@ import cloudflare from '@astrojs/cloudflare';
 
 export default defineConfig({
   site: 'https://khalvai.com',
-  output: 'server', 
+  output: 'server',
 
   vite: {
     plugins: [tailwindcss()],
