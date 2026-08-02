@@ -41,7 +41,7 @@ This is a common problem, and once I recognized it, I looked for a system rather
 
 ## My solution: Have a framework, so your mind doesn't think of other steps every day(frustrating)..
 
-I use [Anki](https://apps.ankiweb.net/), a simple flashcard app built for spaced repetition. The app itself is minimal — the real value comes from _how_ you use it.
+I use [Anki](https://apps.ankiweb.net/), a simple flashcard app built for spaced repetition. The app itself is minimal the real value comes from _how_ you use it.
 
 Here's the workflow. Say my teacher uses a new sentence with a verb I don't know yet:
 
@@ -49,7 +49,7 @@ Here's the workflow. Say my teacher uses a new sentence with a verb I don't know
 
 ## My setup
 
-- **Browser:** Brave, because it blocks ads and keeps a separate, clean browsing history — no mixing German study with everything else I search or watch.
+- **Browser:** [Brave](https://brave.com/), because it blocks ads and keeps a separate, clean browsing history, no mixing German study with everything else I search or watch.
 - **Flashcards:** Anki
 - **Dictionaries:** [Leo](https://dict.leo.org/german-english/) and [B-Amooz](https://dic.b-amooz.com/de/dictionary/) (if you know a better one, let me know!)
 
