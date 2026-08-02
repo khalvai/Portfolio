@@ -1,7 +1,7 @@
 
 ---
 title: "How I Learn German"
-description: "My framework of how I do every day"
+description: "My challenges and solutions for learning and practicing German."
 date: 2026-08-02
 draft: false
 tags: ["German", "Learning", "Language"]
