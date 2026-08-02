@@ -4,6 +4,8 @@ description: "Why most TypeScript interfaces in modern web apps aren't real abst
 draft: false
 tags: ["abstraction", "typescript", "architecture", "nestjs", "anti-patterns"]
 date: 2025-04-21
+image: ""
+
 ---
 
 

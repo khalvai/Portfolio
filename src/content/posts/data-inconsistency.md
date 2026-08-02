@@ -5,6 +5,8 @@ description: "Explore why data inconsistency happens in modern distributed syste
 draft: false
 tags: ["distributed-systems", "data-consistency", "transactions", "patterns", "typescript"]
 date: 2025-04-21
+image: ""
+
 ---
 
 # Data Inconsistency: Common Problems and Solutions

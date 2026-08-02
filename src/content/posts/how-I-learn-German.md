@@ -2,15 +2,16 @@
 ---
 title: "How I Learn German"
 description: "My framework of how I do every day"
-date: 2024-05-10
+date: 2026-08-02
 draft: false
 tags: ["German", "Learning", "Language"]
+image: "/efficiency.jpg"
 ---
 
 
 # How I Learn German
 
-Here's how I've structured my German learning — the routine, the problems I ran into, and the system I built to fix them.
+Here's how I've structured my German learning, the routine. The problems I ran into, and the system I built to fix them.
 
 ## My daily routine
 

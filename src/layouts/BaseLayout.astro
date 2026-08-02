@@ -2,6 +2,30 @@
 import Nav from '@/components/Nav.astro';
 import '@/styles/global.css';
 export const prerender = true;
+
+interface Props {
+  title?: string;
+  description?: string;
+  ogImage?: string;
+}
+
+const {
+  title = 'Khalvai Ozbek',
+  description = 'Backend software engineer writing about architecture, systems, and learning.',
+  ogImage = '/og-default.jpg',
+} = Astro.props;
+
+// Resolve to an absolute URL — Telegram, Twitter, etc. won't fetch relative paths.
+const resolvedOgImage = new URL(
+  ogImage,
+  Astro.site ?? Astro.url.origin
+).toString();
+const canonicalURL = new URL(
+  Astro.url.pathname,
+  Astro.site ?? Astro.url.origin
+).toString();
+const pageTitle =
+  title === 'Khalvai Ozbek' ? title : `${title} — Khalvai Ozbek`;
 ---
 
 <!doctype html>
@@ -12,7 +36,24 @@ export const prerender = true;
     <meta name="generator" content={Astro.generator} />
     <meta name="color-scheme" content="light" />
     <meta name="theme-color" content="#f8f8f6" />
-    <title>Khalvai Ozbek</title>
+
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph (Telegram, Facebook, LinkedIn, etc.) -->
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={resolvedOgImage} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:site_name" content="Khalvai Ozbek" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={resolvedOgImage} />
   </head>
   <body class="bg-paper text-ink font-sans antialiased">
     <Nav />

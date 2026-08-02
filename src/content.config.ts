@@ -56,6 +56,7 @@ const posts = defineCollection({
     /** draft: true means the post is skipped during production builds */
     draft: z.boolean().default(false),
     tags: z.array(z.string()).default([]),
+    image: z.string().optional(),
   }),
 });
 
