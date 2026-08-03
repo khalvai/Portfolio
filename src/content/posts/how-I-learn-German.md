@@ -9,8 +9,6 @@ image: "/efficiency.jpg"
 ---
 
 
-# How I Learn German
-
 Here's how I've structured my German learning, the routine. The problems I ran into, and the system I built to fix them.
 
 ## My daily routine
