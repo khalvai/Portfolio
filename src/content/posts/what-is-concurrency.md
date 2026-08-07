@@ -8,10 +8,6 @@ draft: false
 tags: ["Concurrency", "Parallelism", "Node.js"]
 image: "/small-umbrella.png"
 ---
-
-
-
-
 ![](/small-umbrella.png)
 
 Concurrency is an umbral term in computer science, that we have no single formal standardized definition( like Algorithm, Service ...).
@@ -95,8 +91,10 @@ A race condition happens when the correctness of a program depends on the timing
 
 A race condition requires three ingredients simultaneously:
 
-1. Shared state: two or more tasks access the same variable, object, file, DB row, etc.
-2. At least one write: if everyone's only reading, there's nothing to race over.
-3. No enforced ordering: nothing guarantees task A's read-modify-write completes atomically before task B's does.
+ 1 - Shared state: two or more tasks access the same variable, object, file, DB row, etc.
+
+ 2 - At least one write: if everyone's only reading, there's nothing to race over.
+
+ 3 - No enforced ordering: nothing guarantees task A's read-modify-write completes atomically before task B's does.
 
 Concurrency is the necessary condition, not the cause.
