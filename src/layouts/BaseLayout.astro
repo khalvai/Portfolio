@@ -24,8 +24,6 @@ const canonicalURL = new URL(
   Astro.url.pathname,
   Astro.site ?? Astro.url.origin
 ).toString();
-const pageTitle =
-  title === 'Khalvai Ozbek' ? title : `${title} — Khalvai Ozbek`;
 ---
 
 <!doctype html>
@@ -37,7 +35,7 @@ const pageTitle =
     <meta name="color-scheme" content="light" />
     <meta name="theme-color" content="#f8f8f6" />
 
-    <title>{pageTitle}</title>
+    <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalURL} />
 

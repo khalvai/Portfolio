@@ -1,6 +1,5 @@
 ---
 export const prerender = true;
-import StackTag from '@/components/ui/StackTag.astro';
 import ArchDiagram from '@/components/ArchDiagram.astro';
 
 const stack = [
@@ -14,9 +13,10 @@ const stack = [
 ];
 
 const beliefs = [
-  'Simplicity over cleverness',
-  'Passionate for learning about software',
-  'Build for the people who maintain it next',
+  'Solve problem with the least change',
+  'Build first and then improve it',
+  'Naming is caring',
+  'Prefer removing codes over adding'
 ];
 ---
 
@@ -83,7 +83,13 @@ const beliefs = [
 
     <!-- Tech stack tags -->
     <div class="flex gap-2 flex-wrap mt-10">
-      {stack.map((tech) => <StackTag label={tech} />)}
+      {
+        stack.map((tech) => (
+          <span class="text-[11px] font-mono text-ink-muted bg-surface px-2.5 py-1 rounded">
+            {tech}
+          </span>
+        ))
+      }
     </div>
   </div>
 
