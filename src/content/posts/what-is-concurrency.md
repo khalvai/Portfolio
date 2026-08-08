@@ -1,7 +1,7 @@
 
 
 ---
-title: "What is concurrency?"
+title: "What is Concurrency?"
 description: "Overlapping execution time."
 date: 2026-08-07
 draft: false
