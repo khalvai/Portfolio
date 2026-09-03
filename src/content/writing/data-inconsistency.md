@@ -1,9 +1,9 @@
 
 ---
 title: "Data Inconsistency in Distributed Systems: Problem Patterns & Practical Solutions"
-description: "Explore why data inconsistency happens in modern distributed systems, and learn proven patterns to tackle cross-service consistency, from basic transactions to inbox/outbox and saga patterns. Includes practical TypeScript examples."
+description: Why data inconsistency happen and proven patterns to tackle cross-service consistency
 draft: false
-tags: ["distributed-systems", "data-consistency", "transactions", "patterns", "typescript"]
+tags: ["data-consistency", "transactions","transactions", "patterns", "typescript"]
 date: 2025-04-21
 image: ""
 

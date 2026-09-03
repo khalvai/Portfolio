@@ -1,6 +1,6 @@
 ---
 title: "Wrong Abstractions: The Type Safety Trap"
-description: "Why most TypeScript interfaces in modern web apps aren't real abstractions—and how overusing them for 'type safety' leads to code coupling and anti-patterns. Learn better approaches, with practical NestJS/TypeScript examples."
+description: "How 'type safety' leads to code coupling and anti-patterns."
 draft: false
 tags: ["abstraction", "typescript", "architecture", "nestjs", "anti-patterns"]
 date: 2025-04-21
