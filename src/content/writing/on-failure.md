@@ -51,7 +51,9 @@ On the failure mode, we want to invalidate otp and then notify user.
 
 This policy should be in application layer, not in infrastructure, so what should we do?
 
-1.  catch the method in the application layer
+ I discussed two approaches in this blog.
+
+ ### 1. Catch the method in the application layer
 
 ```ts
 // application layer
@@ -70,7 +72,7 @@ await sendOtp()
 -  It is a bad practice.
 
 
-2.  Use of result pattern
+## 2. Use of result pattern
  -  lets say we have this simple interface as Result pattern:
  ```ts
  export type Result<V, E > = { failed: true; error: E } | { failed: false; value: V }
