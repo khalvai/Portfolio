@@ -2,7 +2,7 @@
 title: "Wrong Abstractions: The Type Safety Trap"
 description: "How 'type safety' leads to code coupling and anti-patterns."
 draft: false
-tags: ["abstraction", "typescript", "architecture", "nestjs", "anti-patterns"]
+tags: ["abstraction","type-safety trap", "typescript", "architecture", "nestjs", "anti-patterns"]
 date: 2025-04-21
 image: ""
 
