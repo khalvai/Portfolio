@@ -5,8 +5,8 @@ import ExperienceSection from '@/components/sections/ExperienceSection.astro';
 import TalksSection from '@/components/sections/TalksSection.astro';
 import { getCollection } from 'astro:content';
 
-const allPosts = await getCollection('posts');
-const posts = allPosts
+const allWriting = await getCollection('writing');
+const writing = allWriting
   .filter((p) => !p.data.draft)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
@@ -71,7 +71,7 @@ const contactLinks = [
 
       <ul class="space-y-8">
         {
-          posts.map((post) => (
+          writing.map((post) => (
             <li class="border-b border-border pb-8 last:border-0">
               <a href={`/writing/${post.id}`} class="group block">
                 <time class="text-[11px] font-mono text-ink-faint mb-2 block">

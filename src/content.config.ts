@@ -47,8 +47,8 @@ const projects = defineCollection({
   }),
 });
 
-const posts = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './src/content/posts' }),
+const writing = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/writing' }),
   schema: z.object({
     title: z.string(),
     description: z.string(),
@@ -65,4 +65,4 @@ const posts = defineCollection({
   The keys here ("projects", "posts") must match the folder names under
   src/content/ — Astro uses this mapping to know which schema to apply.
 */
-export const collections = { projects, posts };
+export const collections = { projects, writing };
