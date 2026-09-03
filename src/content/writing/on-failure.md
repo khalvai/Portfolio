@@ -129,14 +129,10 @@ Now the beauty part is that, we can differentiate the network errors and third p
 
 
 ```ts
-
 // application layer
-
-
 
 const result= await SendOTP({...})
   
-
     if(result.failed){
 	// invalidate the otp
 	
