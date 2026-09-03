@@ -131,16 +131,16 @@ Now the beauty part is that, we can differentiate the network errors and third p
 // application layer
 
 
-const result= await sendOTP(...)
 
-const result= await SendOTP1({...})
+const result= await SendOTP({...})
   
 
-if(result.failed){
-	
+    if(result.failed){
 	// invalidate the otp
-	throw result.error
-	}
+	
+        throw result.error
+    }
+
 ```
 
 
