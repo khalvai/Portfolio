@@ -1,7 +1,7 @@
 
 ---
-title: "How to know when something fails"
-description: When something fails, and we want to do sth in application layer
+title: "Result pattern, on failure"
+description: When a command fails, and we want to execute a business logic in application layer
 draft: false
 tags: ["failure", "application-layer","result-patter", "patterns", "typescript"]
 date: 2026-09-03
