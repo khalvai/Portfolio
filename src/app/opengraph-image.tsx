@@ -3,6 +3,8 @@ import { join } from 'node:path'
 import { ImageResponse } from 'next/og'
 import { BIO, CONFIG } from '@/config'
 
+export const dynamic = "force-static";
+
 // The share card: the top of the home page on the light theme's paper, set
 // the way the page sets it. One size throughout, with weight and ink carrying
 // the hierarchy: the name medium, a line's gap over the muted bio. No domain,
