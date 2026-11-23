@@ -22,20 +22,31 @@ const BioLink = ({ href, children }: { href: string; children: string }) => (
 // markdown, links kept; the share card draws it too. One source, so they all
 // say the same thing.
 export const BIO: (string | { text: string; href: string })[] = [
-  "currently ",
-  { text: "searching", href: "https://www.noahpinion.blog/p/bumbition" },
-  " around. before that, i was the software engineer  at ",
-  { text: "intekila.ai", href: "https://intelika.ai/" },
-  " and ",
-  { text: "nobati", href: "https://nobati.app" },
-  ". i study M.Sc in Computer Science  at ",
-  { text: "RPTU", href: "https://rptu.de" },
-  ". I obtained my bachelor from ",
+  "My interest path started by reading ",
   {
-    text: "Computer Engineering",
-    href: "https://www.vali-e-asr.ir",
+    text: "Clean Code book. ",
+    href: "https://www.oreilly.com/library/view/clean-code-a/9780136083238/",
   },
-  ".",
+  "Which led me to",
+  {
+    text: " OOP Design Patterns book.",
+    href: "https://www.oreilly.com/library/view/head-first-design/9781492077992/",
+  },
+  " After observing positive results on my daily tasks. I decided to explore existing knowledge of Software Architecture. Therefore, I started ",
+  {
+    text: "Clean Architecture.",
+    href: "https://www.oreilly.com/library/view/get-your-hands/9781839211966/",
+  },
+  " I explored ",
+  {
+    text: "Domain Driven Design",
+    href: "https://www.oreilly.com/library/view/learning-domain-driven-design/9781098100124/",
+  },
+  ". Currently I'm researching",
+  {
+    text: " System Dynamics.",
+    href: "https://www.youtube.com/watch?v=XL_lOoomRTA",
+  },
 ];
 
 type Config = {
