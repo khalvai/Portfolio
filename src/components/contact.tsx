@@ -9,7 +9,7 @@ const socialLink =
 
 const Contact = () => {
   return (
-    <footer className="mt-32 animate-enter">
+    <footer className="mt-1 animate-enter">
       <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-2">
         <nav
           aria-label="social"

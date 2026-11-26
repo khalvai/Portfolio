@@ -1,12 +1,10 @@
 import Header from "@/components/header";
 import Writing from "@/components/projects";
+import TextSpotlightEffect from "@/components/text-spotlight";
 import { CONFIG } from "@/config";
 
 export default function Home() {
   return (
-    // Two rhythms, after jakub.kr: tight within a group (the name 16px
-    // over the bio, a label 12px over its list) and wide between groups
-    // (128px at every width, as on desktop), so each section reads as its own block.
     <>
       <Header />
 
@@ -14,6 +12,7 @@ export default function Home() {
         {CONFIG.description}
       </p>
 
+      <TextSpotlightEffect />
       <Writing />
     </>
   );
