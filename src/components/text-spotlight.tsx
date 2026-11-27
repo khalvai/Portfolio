@@ -101,7 +101,7 @@ function SpotlightLine({
 
 export default function TextSpotlightEffect() {
   return (
-    <section className="text-[#fafafa]">
+    <section>
       <div className="mx-auto w-[90%] max-w-[500px] py-[20vh] text-center">
         <p style={textStyle}> My growth path</p>
 
