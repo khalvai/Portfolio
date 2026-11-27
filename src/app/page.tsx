@@ -1,5 +1,5 @@
 import Header from "@/components/header";
-import Writing from "@/components/projects";
+import Writing from "@/components/writing";
 import TextSpotlightEffect from "@/components/text-spotlight";
 import { CONFIG } from "@/config";
 
@@ -13,7 +13,7 @@ export default function Home() {
       </p>
 
       <TextSpotlightEffect />
-      <Writing />
+      <Writing limit={5} />
     </>
   );
 }

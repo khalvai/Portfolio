@@ -1,0 +1,7 @@
+# Static export writes the generated Open Graph images without an extension.
+# Give them the correct type so Telegram, LinkedIn, X, etc. accept them.
+/opengraph-image
+  Content-Type: image/png
+
+/writing/:slug/opengraph-image
+  Content-Type: image/png
