@@ -17,6 +17,43 @@ const BioLink = ({ href, children }: { href: string; children: string }) => (
   </Link>
 );
 
+export type Step = {
+  title: string;
+  href?: string;
+};
+export const steps: Step[] = [
+  {
+    title: "System Thinking",
+    href: "https://www.youtube.com/watch?v=XL_lOoomRTA",
+  },
+  {
+    title: "Domain Driven Design",
+    href: "https://www.oreilly.com/library/view/learning-domain-driven-design/9781098100124/",
+  },
+  {
+    title: "Microservices",
+    href: "https://www.oreilly.com/library/view/building-microservices-2nd/9781492034018/",
+  },
+  {
+    title: "Clean Architecture",
+    href: "https://www.oreilly.com/library/view/get-your-hands/9781839211966/",
+  },
+  {
+    title: "Fundamentals of Software Architecture",
+    href: "https://www.oreilly.com/library/view/fundamentals-of-software/9781098175504/",
+  },
+  {
+    title: "Design Patterns",
+    href: "https://www.oreilly.com/library/view/head-first-design/9781492077992/",
+  },
+  {
+    title: "Clean Code book",
+    href: "https://www.oreilly.com/library/view/clean-code-a/9780136083238/",
+  },
+  { title: "Learned Nestjs", href: "https://github.com/khalvai/uploader" },
+  { title: "Learned Ts", href: "https://github.com/khalvai/uploader" },
+];
+
 // The bio, written once as text and links. The page renders it with
 // BioLinks; the meta description takes the plain text; llms.txt takes it as
 // markdown, links kept; the share card draws it too. One source, so they all

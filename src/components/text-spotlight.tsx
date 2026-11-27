@@ -8,6 +8,7 @@ import {
   useTransform,
   type MotionValue,
 } from "motion/react";
+import { steps } from "@/config";
 
 /**
  * Scroll-driven "spotlight" text effect.
@@ -15,42 +16,6 @@ import {
  *
  * Install: npm i motion
  */
-type Step = {
-  title: string;
-  href?: string;
-};
-const steps: Step[] = [
-  {
-    title: "System Thinking",
-    href: "https://www.youtube.com/watch?v=XL_lOoomRTA",
-  },
-  {
-    title: "Domain Driven Design",
-    href: "https://www.oreilly.com/library/view/learning-domain-driven-design/9781098100124/",
-  },
-  {
-    title: "Microservices",
-    href: "https://www.oreilly.com/library/view/building-microservices-2nd/9781492034018/",
-  },
-  {
-    title: "Clean Architecture",
-    href: "https://www.oreilly.com/library/view/get-your-hands/9781839211966/",
-  },
-  {
-    title: "Fundamentals of Software Architecture",
-    href: "https://www.oreilly.com/library/view/fundamentals-of-software/9781098175504/",
-  },
-  {
-    title: "Design Patterns",
-    href: "https://www.oreilly.com/library/view/head-first-design/9781492077992/",
-  },
-  {
-    title: "Clean Code book",
-    href: "https://www.oreilly.com/library/view/clean-code-a/9780136083238/",
-  },
-  { title: "Learned Nestjs", href: "https://github.com/khalvai/uploader" },
-  { title: "Learned Ts", href: "https://github.com/khalvai/uploader" },
-];
 
 const SERIF_STACK = '"Spotlight Sentient", Georgia, "Times New Roman", serif';
 
